@@ -1,0 +1,49 @@
+alph = ['A','B','C','D','E','F','G','H','I','J','K','L','M',\
+        'N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+
+def basic_caesar(alph,origin,shift):
+    output = ''
+    for i in range(0,len(origin)):
+        if origin[i] == ' ':
+            output += ' '
+        else:
+            num = alph.index(origin[i])
+            nnum = (num + shift) % 26
+            output += alph[nnum]
+    return output
+
+def decode_basic_caesar(alph,origin,shift):
+    output = ''
+    for i in range(0,len(origin)):
+        if origin[i] == ' ':
+            output += ' '
+        else:
+            num = alph.index(origin[i])
+            nnum = (num - shift) % 26
+            output += alph[nnum]
+    return output
+
+def adv_caesar(alph,origin,oshift,schange):
+    output = ''
+    shift = oshift
+    for i in range(0,len(origin)):
+        if origin[i] == ' ':
+            output += ' '
+        else:
+            num = alph.index(origin[i])
+            nnum = (num + shift) % 26
+            output += alph[nnum]
+            shift = (shift + schange) % 26
+    return output
+
+def decode_adv_caesar(alph,origin,oshift,schange):
+    output = ' '
+    shift = oshift
+    for i in range(0,len(origin)):
+        if origin[i] = ' ':
+            output += ' '
+        else:
+            num = alph.index(origin[i])
+            nnum = (num - shift) % 26
+            output += alph[nnum]
+            shift = (shift + schange) % 26
